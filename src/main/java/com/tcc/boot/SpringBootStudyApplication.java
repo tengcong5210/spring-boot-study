@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SpringBootStudyApplication {
 
-	//通过@value注解可以把属性(application.properties)文件中的值注入进来
+	//通过@value注解可以把属性(application.properties)文件中的值注入进来 属于常规属性配置
 	@Value("${book.author}")
 	private String bookAuthor;
 	@Value("${book.name}")
