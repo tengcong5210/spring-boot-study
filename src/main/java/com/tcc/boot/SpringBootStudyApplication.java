@@ -1,5 +1,6 @@
 package com.tcc.boot;
 
+import com.tcc.chapter_6_5.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -18,10 +19,13 @@ public class SpringBootStudyApplication {
 	private String bookName;
 	@Autowired
 	private AuthorSeting authorSeting;
+	@Autowired
+	private HelloService helloService;
 
 	@RequestMapping("/")
 	public String index(){
-		return "Hello Spring boot,"+bookAuthor+";"+bookName+";authorName:"+authorSeting.getName()+";age:"+authorSeting.getAge();
+		//return "Hello Spring boot,"+bookAuthor+";"+bookName+";authorName:"+authorSeting.getName()+";age:"+authorSeting.getAge();
+		return helloService.sayHello();
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootStudyApplication.class, args);
